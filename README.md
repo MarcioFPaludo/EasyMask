@@ -22,7 +22,7 @@ pod 'EasyMask'
 
 ## Author
 
-MarcioFPaludo, marcio.paludo@itlean.com.br
+MarcioFPaludo, marciof.paludo@gmail.com
 
 ## License
 
