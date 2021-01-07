@@ -1,0 +1,6 @@
+framework module Pods_EasyMask_Example {
+  umbrella header "Pods-EasyMask_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

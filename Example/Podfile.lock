@@ -1,0 +1,16 @@
+PODS:
+  - EasyMask (0.1.0)
+
+DEPENDENCIES:
+  - EasyMask (from `../`)
+
+EXTERNAL SOURCES:
+  EasyMask:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyMask: 58703aa52ed9c14bea31745aa506b5ab1f842bc8
+
+PODFILE CHECKSUM: 999cc934e5a1d9cc0c05c7da79685abdf5d5705b
+
+COCOAPODS: 1.10.0

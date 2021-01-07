@@ -11,8 +11,8 @@ import UIKit
 
 public struct Mask {
     enum ValidationType { case character(Character), full(String) }
-    fileprivate static let letters:[Character] = ["C", "c"]
     typealias ValidationHandler = (ValidationType) -> Bool
+    fileprivate static let letters:[Character] = ["C", "c"]
     fileprivate let validationHandler: ValidationHandler?
     let isCaseSensitive: Bool
     let format: String
