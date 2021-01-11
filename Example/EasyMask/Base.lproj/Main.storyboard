@@ -39,19 +39,35 @@
                                     <constraint firstAttribute="height" constant="112" id="cT7-sD-7LA"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-Ww-lVC">
+                                <rect key="frame" x="36" y="260" width="342" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="McL-m8-BzM"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="tea-jb-kSO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uH5-Ww-lVC" secondAttribute="trailing" constant="16" id="G3J-f9-8x8"/>
                             <constraint firstItem="fOc-jV-kbq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="HBc-QD-Xp0"/>
                             <constraint firstItem="fOc-jV-kbq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="PXr-Oo-SRU"/>
+                            <constraint firstItem="uH5-Ww-lVC" firstAttribute="top" secondItem="sHn-cG-vnF" secondAttribute="bottom" constant="24" id="RxJ-2J-0L2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fOc-jV-kbq" secondAttribute="trailing" id="XKe-qS-5fc"/>
                             <constraint firstItem="sHn-cG-vnF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="Ygf-Sf-nXx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sHn-cG-vnF" secondAttribute="trailing" constant="16" id="ceH-03-ekh"/>
+                            <constraint firstItem="uH5-Ww-lVC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="nOI-30-eoF"/>
                             <constraint firstItem="sHn-cG-vnF" firstAttribute="top" secondItem="fOc-jV-kbq" secondAttribute="bottom" constant="24" id="wRS-kG-mml"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cpfTextField" destination="sHn-cG-vnF" id="X6g-Wz-j5f"/>
+                        <outlet property="phoneTextField" destination="uH5-Ww-lVC" id="fvj-bl-BdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
