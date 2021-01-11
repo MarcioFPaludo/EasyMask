@@ -1,0 +1,6 @@
+framework module EasyMask {
+  umbrella header "EasyMask-umbrella.h"
+
+  export *
+  module * { export * }
+}
