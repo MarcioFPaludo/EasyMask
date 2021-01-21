@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'EasyMask'
   s.version          = '1.1.1'
   s.summary          = 'An Swift mask of easy use.'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
