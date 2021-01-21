@@ -1,78 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ISO-bK-BcH">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="L24-wG-VF1">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ViewController" customModule="EasyMask_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <tableViewController id="ISO-bK-BcH" customClass="ViewController" customModule="EasyMask_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8XQ-Nt-q9B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF validator" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHn-cG-vnF">
-                                <rect key="frame" x="36" y="180" width="342" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="kxO-1W-Sz6"/>
-                                </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="N3g-qk-Hsd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="JwX-bI-hm6" customClass="TextFieldCell" customModule="EasyMask_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="108" width="414" height="66.333335876464844"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JwX-bI-hm6" id="wQ7-F3-cHA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66.333335876464844"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-1Q-kQh">
+                                            <rect key="frame" x="16" y="16.000000000000004" width="382" height="34.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="ISO-bK-BcH" id="oyi-z7-NTL"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mvf-1Q-kQh" firstAttribute="top" secondItem="wQ7-F3-cHA" secondAttribute="top" constant="16" id="QK1-vf-eAG"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mvf-1Q-kQh" secondAttribute="bottom" constant="16" id="Tqf-xd-ltS"/>
+                                        <constraint firstItem="Mvf-1Q-kQh" firstAttribute="leading" secondItem="wQ7-F3-cHA" secondAttribute="leading" constant="16" id="Uji-kN-CAW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mvf-1Q-kQh" secondAttribute="trailing" constant="16" id="WKU-Xa-JRm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="HYp-Yk-guJ"/>
+                                    <outlet property="textField" destination="Mvf-1Q-kQh" id="UJq-Bs-b3g"/>
                                 </connections>
-                            </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOc-jV-kbq">
-                                <rect key="frame" x="20" y="44" width="374" height="112"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="cT7-sD-7LA"/>
-                                </constraints>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uH5-Ww-lVC">
-                                <rect key="frame" x="36" y="260" width="342" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="McL-m8-BzM"/>
-                                </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="tea-jb-kSO"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="uH5-Ww-lVC" secondAttribute="trailing" constant="16" id="G3J-f9-8x8"/>
-                            <constraint firstItem="fOc-jV-kbq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="HBc-QD-Xp0"/>
-                            <constraint firstItem="fOc-jV-kbq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="PXr-Oo-SRU"/>
-                            <constraint firstItem="uH5-Ww-lVC" firstAttribute="top" secondItem="sHn-cG-vnF" secondAttribute="bottom" constant="24" id="RxJ-2J-0L2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fOc-jV-kbq" secondAttribute="trailing" id="XKe-qS-5fc"/>
-                            <constraint firstItem="sHn-cG-vnF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="Ygf-Sf-nXx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sHn-cG-vnF" secondAttribute="trailing" constant="16" id="ceH-03-ekh"/>
-                            <constraint firstItem="uH5-Ww-lVC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="nOI-30-eoF"/>
-                            <constraint firstItem="sHn-cG-vnF" firstAttribute="top" secondItem="fOc-jV-kbq" secondAttribute="bottom" constant="24" id="wRS-kG-mml"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="cpfTextField" destination="sHn-cG-vnF" id="X6g-Wz-j5f"/>
-                        <outlet property="phoneTextField" destination="uH5-Ww-lVC" id="fvj-bl-BdP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ISO-bK-BcH" id="c7s-Qh-bZI"/>
+                            <outlet property="delegate" destination="ISO-bK-BcH" id="8B3-Bi-Jar"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaR-gf-SPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217" y="97"/>
+            <point key="canvasLocation" x="-558" y="104"/>
         </scene>
     </scenes>
     <resources>

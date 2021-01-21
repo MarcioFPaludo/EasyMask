@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Mask Struct
 
 public struct Mask {
-    enum ValidationType { case character(Character), full(String) }
+    enum ValidationType { case character(Character, index: Int), full(String) }
     typealias ValidationHandler = (ValidationType) -> Bool
     fileprivate static let letters:[Character] = ["C", "c"]
     fileprivate let validationHandler: ValidationHandler?
@@ -35,23 +35,26 @@ public struct Mask {
     
     fileprivate func addMask(to string: String) -> String {
         var replaceCharacters = removeMask(from: string)
-        
-        if let handler = validationHandler {
-            replaceCharacters = String(replaceCharacters.compactMap({ return handler(.character($0)) ? $0 : nil }))
-        }
-        
-        return format.compactMap({
+        return format.enumerated().compactMap({
             var character: String?
             
-            if replaceCharacters.count > 0 {
-                if Mask.letters.contains($0) {
-                    character = String(replaceCharacters.removeFirst())
+            while replaceCharacters.count > 0 && character == nil {
+                if Mask.letters.contains($0.element) {
+                    let replaceCharacter = replaceCharacters.removeFirst()
                     
-                    if isCaseSensitive {
-                        character = "C" == $0 ? character?.uppercased() : character?.lowercased()
+                    if let handler = validationHandler {
+                        if handler(.character(replaceCharacter, index: $0.offset)) {
+                            character = String(replaceCharacter)
+                        }
+                    } else {
+                        character = String(replaceCharacter)
+                    }
+                    
+                    if let c = character, isCaseSensitive {
+                        character = "C" == $0.element ? c.uppercased() : c.lowercased()
                     }
                 } else {
-                    character = String($0)
+                    character = String($0.element)
                 }
             }
             
@@ -68,7 +71,7 @@ public struct Mask {
 
 // MARK: - String Extension
 
-extension String {
+public extension String {
     func applyMask(_ mask: Mask) -> String {
         return mask.addMask(to: self)
     }
@@ -84,8 +87,8 @@ extension String {
 
 // MARK: - TextField Extension
 
-extension UITextField: UITextFieldDelegate {
-    public func shouldChangeCharacters(in range: NSRange, replacementString string: String, for mask: Mask) -> Bool {
+public extension UITextField {
+    func shouldChangeCharacters(in range: NSRange, replacementString string: String, for mask: Mask) -> Bool {
         let newText = (text as NSString?)?.replacingCharacters(in: range, with: string).applyMask(mask)
         let addedCharacters = string.count > 0 ? (newText?.count ?? 0) - (text?.count ?? 0) : 0
         text = newText
