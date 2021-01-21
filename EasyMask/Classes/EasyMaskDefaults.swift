@@ -16,9 +16,9 @@ public extension Mask {
                 let numbers = string.compactMap({ $0.wholeNumberValue })
                 return numbers.count == 14 && Set(numbers).count != 1 && [12, 13].first(where: { (n) in
                     var multiplier = n - 6, digit = 11
-                    digit -= (numbers.prefix(n).enumerated().reduce(into: 0, {
-                        multiplier = (multiplier - 1) > 1 ? (multiplier - 1) : 9
-                        $0 += $1.element * multiplier
+                    digit -= (numbers.prefix(n).reduce(into: 0, {
+                        multiplier += (multiplier - 1) > 1 ? -1 : 7
+                        $0 += $1 * multiplier
                     }) % 11)
                     return numbers[n] != (digit >= 10 ? 0 : digit)
                 }) == nil
