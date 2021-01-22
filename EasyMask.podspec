@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.summary          = 'An Swift mask of easy use.'
   s.name             = 'EasyMask'
-  s.version          = '1.1.4'
+  s.version          = '1.1.5'
   s.swift_version    = '5.0'
 
   s.description      = <<-DESC

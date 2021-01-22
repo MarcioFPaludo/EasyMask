@@ -17,8 +17,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
     
     var masks: [String: Mask] = [
         "CNPJ": .cnpj,
-        "CPF": .cpf,
-        "Phone": .phone
+        "CPF": .cpf
     ]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
