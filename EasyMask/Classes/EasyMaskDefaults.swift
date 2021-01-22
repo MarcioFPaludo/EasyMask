@@ -41,22 +41,4 @@ public extension Mask {
             }
         }
     }
-    
-    static var phone: Mask {
-        return .init(format: "(cc) cccc-ccccc") { (type) -> Bool in
-            switch type {
-            case .character(let c, _): return c.isWholeNumber
-            case .full(let string): return !string.isEmpty
-            }
-        }
-    }
-    
-    static var time: Mask {
-        return .init(format: "cc:cc") { (type) -> Bool in
-            switch type {
-            case .character(let c, _): return c.isNumber
-            case .full(let string): return !string.isEmpty
-            }
-        }
-    }
 }
