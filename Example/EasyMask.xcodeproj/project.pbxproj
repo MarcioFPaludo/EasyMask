@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E93BF9094653FFE2E7CAA48 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		11318303704E1261C38F1B03 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0E93BF9094653FFE2E7CAA48 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		11318303704E1261C38F1B03 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1F5FCE7D6D6503CA50745BA2 /* Pods-EasyMask_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMask_Example.debug.xcconfig"; path = "Target Support Files/Pods-EasyMask_Example/Pods-EasyMask_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		340259DA5B5815EE82919B00 /* Pods-EasyMask_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMask_Tests.release.xcconfig"; path = "Target Support Files/Pods-EasyMask_Tests/Pods-EasyMask_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		40E7E0A121F73F9154D8F25E /* Pods-EasyMask_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMask_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EasyMask_Tests/Pods-EasyMask_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		607FACE51AFB9204008FA782 /* EasyMask_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyMask_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		61FAFBE44B38E1DA0E724754 /* EasyMask.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EasyMask.podspec; path = ../EasyMask.podspec; sourceTree = "<group>"; };
+		61FAFBE44B38E1DA0E724754 /* EasyMask.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasyMask.podspec; path = ../EasyMask.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		772A6D81DB6FF8169B9B4ECD /* Pods_EasyMask_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyMask_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFA3E5678C5FED8AE8866C4 /* Pods_EasyMask_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyMask_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A68BCB98CB15F866933511 /* Pods-EasyMask_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyMask_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyMask_Example/Pods-EasyMask_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +156,6 @@
 				40E7E0A121F73F9154D8F25E /* Pods-EasyMask_Tests.debug.xcconfig */,
 				340259DA5B5815EE82919B00 /* Pods-EasyMask_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
