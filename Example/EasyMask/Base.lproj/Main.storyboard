@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,21 +14,19 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8XQ-Nt-q9B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="N3g-qk-Hsd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldCell" id="JwX-bI-hm6" customClass="TextFieldCell" customModule="EasyMask_Example" customModuleProvider="target">
-                                <rect key="frame" x="20" y="135.33333206176758" width="374" height="66.333335876464844"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITextField" id="JwX-bI-hm6" customClass="TextFieldCell" customModule="EasyMask_Example" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="50.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JwX-bI-hm6" id="wQ7-F3-cHA">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="66.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-1Q-kQh">
-                                            <rect key="frame" x="16" y="16.000000000000004" width="342" height="34.333333333333343"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-1Q-kQh">
+                                            <rect key="frame" x="16" y="0.0" width="342" height="50.333333333333336"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="SgT-56-mzb"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -38,14 +35,41 @@
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Mvf-1Q-kQh" firstAttribute="top" secondItem="wQ7-F3-cHA" secondAttribute="top" constant="16" id="QK1-vf-eAG"/>
-                                        <constraint firstAttribute="bottom" secondItem="Mvf-1Q-kQh" secondAttribute="bottom" constant="16" id="Tqf-xd-ltS"/>
+                                        <constraint firstItem="Mvf-1Q-kQh" firstAttribute="top" secondItem="wQ7-F3-cHA" secondAttribute="top" id="QK1-vf-eAG"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mvf-1Q-kQh" secondAttribute="bottom" id="Tqf-xd-ltS"/>
                                         <constraint firstItem="Mvf-1Q-kQh" firstAttribute="leading" secondItem="wQ7-F3-cHA" secondAttribute="leading" constant="16" id="Uji-kN-CAW"/>
                                         <constraint firstAttribute="trailing" secondItem="Mvf-1Q-kQh" secondAttribute="trailing" constant="16" id="WKU-Xa-JRm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textField" destination="Mvf-1Q-kQh" id="UJq-Bs-b3g"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MaskTextField" id="FQu-i2-5pt" customClass="MaskTextFieldCell" customModule="EasyMask_Example" customModuleProvider="target">
+                                <rect key="frame" x="20" y="105.66666412353516" width="374" height="50.333332061767578"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FQu-i2-5pt" id="cW3-Us-cnj">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50.333332061767578"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-fs-0eF" customClass="MaskTextField" customModule="EasyMask">
+                                            <rect key="frame" x="16" y="0.0" width="342" height="50.333333333333336"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="ZK3-yo-P32"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mvj-fs-0eF" firstAttribute="leading" secondItem="cW3-Us-cnj" secondAttribute="leading" constant="16" id="KOY-S5-1mp"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mvj-fs-0eF" secondAttribute="bottom" id="UQA-hi-Rrx"/>
+                                        <constraint firstItem="Mvj-fs-0eF" firstAttribute="top" secondItem="cW3-Us-cnj" secondAttribute="top" id="ggp-UH-Zz2"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mvj-fs-0eF" secondAttribute="trailing" constant="16" id="oDl-vD-7lb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="Mvj-fs-0eF" id="ybn-ev-vDL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,9 +84,4 @@
             <point key="canvasLocation" x="-558" y="104"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

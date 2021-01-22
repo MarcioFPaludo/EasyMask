@@ -9,8 +9,8 @@ import Foundation
 
 public extension Mask {
     static var cnpj: Mask {
-        return .init(format: "cc.ccc.ccc/cccc-cc") { (type) -> Bool in
-            switch type {
+        return .init(format: "cc.ccc.ccc/cccc-cc") {
+            switch $0 {
             case .character(let c, _): return c.isWholeNumber
             case .full(let string):
                 let numbers = string.compactMap({ $0.wholeNumberValue })
@@ -27,8 +27,8 @@ public extension Mask {
     }
     
     static var cpf: Mask {
-        return .init(format: "ccc.ccc.ccc-cc") { (type) -> Bool in
-            switch type {
+        return .init(format: "ccc.ccc.ccc-cc") {
+            switch $0 {
             case .character(let c, _): return c.isWholeNumber
             case .full(let string):
                 let numbers = string.compactMap({ $0.wholeNumberValue })
@@ -43,12 +43,12 @@ public extension Mask {
     }
     
     static var ssn: Mask {
-        return .init(format: "ccc-cc-cccc") { (type) -> Bool in
-            switch type {
+        return .init(format: "ccc-cc-cccc") {
+            switch $0 {
             case .character(let c, _): return c.isWholeNumber
             case .full(let string):
-                let ssnRegext = "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
-                return string.range(of: ssnRegext, options: .regularExpression) != nil
+                let regex = "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
+                return string.range(of: regex, options: .regularExpression) != nil
             }
         }
     }
