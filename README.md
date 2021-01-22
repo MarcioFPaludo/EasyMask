@@ -20,9 +20,10 @@ it, simply add the following line to your Podfile:
 pod 'EasyMask'
 ```
 
-## Author
+## Authors
 
 MarcioFPaludo, marciof.paludo@gmail.com
+Striker901, viniciusbrando059@gmail.com
 
 ## License
 
