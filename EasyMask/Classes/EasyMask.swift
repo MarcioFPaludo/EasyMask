@@ -68,7 +68,6 @@ public struct Mask {
         let characters = format.compactMap({ return !Mask.letters.contains($0) ? $0 : nil })
         return String(string.compactMap({ return !characters.contains($0) ? $0 : nil }))
     }
-    
 }
 
 // MARK: - String Extension
@@ -116,30 +115,22 @@ public extension UITextField {
 // MARK: - MaskTextField
 
 public class MaskTextField: UITextField, UITextFieldDelegate {
-    
-    fileprivate var lengths: [Int] { return Array(lengthOfMask.keys).sorted() }
     fileprivate var lengthOfMask: [Int: Mask] = [:]
-    fileprivate var unmaskedText: String?
-    fileprivate var minLength: Int = 0
+    fileprivate(set) var unmaskedText: String?
+    fileprivate var lengths: [Int] = []
     public var masks: [Mask] {
         get { return Array(lengthOfMask.values) }
         set {
-            var minLength: Int = .max, lengthOfMask: [Int: Mask] = [:]
+            var lengthOfMask: [Int: Mask] = [:]
             for mask in newValue {
-                let length = mask.format.compactMap({
+                lengthOfMask[mask.format.compactMap({
                     return Mask.letters.contains($0) ? $0 : nil
-                }).count
-                
-                if minLength > length {
-                    minLength = length
-                }
-                
-                lengthOfMask[length] = mask
+                }).count] = mask
             }
             
             delegate = self
-            self.minLength = minLength
             self.lengthOfMask = lengthOfMask
+            lengths = Array(lengthOfMask.keys).sorted()
         }
     }
     public var currentMask: Mask? {
