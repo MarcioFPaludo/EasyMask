@@ -41,4 +41,15 @@ public extension Mask {
             }
         }
     }
+    
+    static var ssn: Mask {
+        return .init(format: "ccc-cc-cccc") { (type) -> Bool in
+            switch type {
+            case .character(let c, _): return c.isWholeNumber
+            case .full(let string):
+                let ssnRegext = "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
+                return string.range(of: ssnRegext, options: .regularExpression) != nil
+            }
+        }
+    }
 }
